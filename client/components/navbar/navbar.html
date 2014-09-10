@@ -1,0 +1,106 @@
+<div class="off-canvas-wrap" ng-controller="NavbarCtrl">
+    <div class="inner-wrap" style="min-height:400px;">
+        <nav class="tab-bar">
+            <section class="middle tab-bar-section">
+              <div class="row">
+                <div class="left-off-canvas-toggle small-4 columns text-left navbar-modulus">
+                  <span class="navbar-title">Modulus</span><a> <i class="fa fa-bars fa-lg"></i></a>
+                </div>
+                <div class="small-8 columns">
+                 <div class="small-4 columns">
+                   <a class="left-off-canvas-toggle"> <i class="fa fa-search fa-lg"></i></a>
+                 </div>
+                 <div class="small-4 columns">
+                   <a class="left-off-canvas-toggle"> <i class="fa fa-gear fa-lg"></i></a>
+                 </div>
+                 <div class="small-4 columns">
+                    <a ui-sref="menu" class="left-off-canvas-toggle"> <i class="fa fa-user fa-lg"></i></a>
+                 </div>
+                </div>
+              </div>
+            </section>            
+        </nav>
+        <aside class="left-off-canvas-menu">
+             <tabset>
+                <tab select="setCurrentTab('Modulus')" class="text-center">
+                  <tab-heading>
+                     <i class="fa fa-bars fa-lg"></i>
+                     <span ng-show="currentTab == 'Modulus'">Modulus</span>
+                  </tab-heading>
+                  <h2>Modulus</h2>
+                </tab>
+                <tab select="setCurrentTab('Buscar')" class="text-center">
+                  <tab-heading>
+                    <i class="fa fa-search fa-lg"></i>
+                    <span ng-show="currentTab == 'Buscar'">Buscar</span>
+                  </tab-heading>
+                  <h2>Búsqueda</h2>
+                </tab>
+                <tab select="setCurrentTab('Configuracion')" class="text-center">
+                  <tab-heading>
+                    <i class="fa fa-gear fa-lg"></i>
+                    <span ng-show="currentTab == 'Configuracion'">Configuraci&oacute;n</span>
+                  </tab-heading>
+                  <h2>Configuración</h2>
+                </tab>
+                <tab select="setCurrentTab('Seguridad')" class="text-center">
+                  <tab-heading>
+                    <i class="fa fa-user fa-lg"></i>
+                    <span ng-show="currentTab == 'Seguridad'">Seguridad</span>
+                  </tab-heading>
+                  <h2>Seguridad</h2>
+                  <!-- <a class="exit-off-canvas">Salir</a>    -->
+                </tab>
+              </tabset>              
+              <div class="row">
+                <div class="small-12 columns text-right">
+                    <ul>
+                      <li class="exit-off-canvas">Salir</li>
+                    </ul>
+                </div>
+              </div>
+        </aside>
+        <aside class="right-off-canvas-menu">
+            <ul class="off-canvas-list">
+                <li><a href="#">Right Sidebar</a></li>
+            </ul>
+        </aside>
+        <section class="main-section">
+            <div class="small-12 columns">
+            </div>
+        </section>     
+    </div>
+</div>
+
+
+
+<!-- <div class="navbar navbar-default navbar-static-top" ng-controller="NavbarCtrl">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">modulus-io</a>
+    </div>
+    <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav">
+        <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
+            <a ng-href="{{item.link}}">{{item.title}}</a>
+        </li>
+        <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}"><a href="/admin">Admin</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}"><a href="/signup">Sign up</a></li>
+        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href="/login">Login</a></li>
+        <li ng-show="isLoggedIn()"><p class="navbar-text">Hello {{ getCurrentUser().name }}</p> </li>
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li>
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+ -->

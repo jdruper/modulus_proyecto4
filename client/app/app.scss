@@ -1,0 +1,49 @@
+ @import "settings";
+ @import "foundation";
+
+ $fa-font-path: "/bower_components/font-awesome/fonts";
+ @import 'font-awesome/scss/font-awesome';
+
+/**
+ * App-wide Styles
+ */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+}
+
+select.ng-invalid, input.ng-invalid {
+  border: 1px solid red;
+}
+select.ng-valid, input.ng-valid {
+  border: 1px solid #ccc;
+}
+
+input.ng-pristine, select.ng-pristine {
+  border: 1px solid #ccc;
+}
+
+// Component styles are injected through grunt
+// injector
+@import 'account/login/login.scss';
+@import 'admin/admin.scss';
+@import 'directives/offcanvasNavbar/offcanvasNavbar.scss';
+@import 'main/main.scss';
+@import 'role/edit/edit.scss';
+@import 'role/list/list.scss';
+@import 'role/role.scss';
+@import 'user/edit/edit.scss';
+@import 'user/list/list.scss';
+@import 'user/user.scss';
+@import 'navbar/navbar.scss';
+// endinjector

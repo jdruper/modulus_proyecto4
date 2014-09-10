@@ -1,0 +1,41 @@
+<div class="row">
+<div class="small-12 columns data-panel">                                              
+                          <div class="small-4 columns text-left menu-heading">
+                              <h3 class="internal-header">Roles</h3>
+                          </div>
+                          <div class="small-8 columns">
+                            <div class="menu-options">
+                              <div class="small-4 columns text-right">
+                                <a ui-sref="role.list">
+                                  <i class="fa fa-list fa-fw fa-2x"></i>
+                                </a>
+                              </div>
+                              <div class="small-4 columns text-right">
+                                <a ui-sref="role.create">
+                                  <i class="fa fa-plus fa-fw fa-2x"></i>
+                                </a>
+                              </div>
+                              <div class="small-4 columns text-right">
+                               <a ui-sref="role.delete">
+                                <i class="fa fa-trash fa-fw fa-2x"></i>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+</div>
+<div class="row">
+	<div class="small-12  columns data-panel" ng-show="form.txtUsername.$invalid">
+		<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+	</div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <div mc-messages></div> 
+  </div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
+		<div ui-view=""></div>	
+	</div>
+</div>

@@ -1,0 +1,90 @@
+.navbar-title{
+	margin-right:2%;
+	font-family: $header-font-family;
+}
+
+.left-off-canvas-menu{
+	color:#fff;
+}
+
+.left-off-canvas-menu h2{
+	color:#fff;
+}
+
+.navbar-modulus{
+	padding-right: 0 !important;
+}
+
+.tabs{
+	border-bottom:2px solid $primary-color;
+}
+
+dd.active a{
+	min-width:161px;
+}
+
+.menu-panel{
+	border-bottom:solid 1px #D2D1DC;
+	padding:5%;
+}
+
+.data-panel{	
+	padding:5%;
+	border-bottom:solid 1px #12CCC3;
+	margin-bottom:5%;
+}
+.menu-container h5{
+	color:$primary-color;
+}
+
+.menu-container h1,h2,h3,h4,h5,h6{
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+.menu-container i{
+	color: #fff;
+}
+
+.menu-heading h3{
+	color:#fff!important;	
+}
+
+.menu-heading i{
+	padding-bottom:10%;
+}
+
+.menu-heading .internal-header{
+	color:#222 !important;
+}
+
+.menu-options{
+	margin-top:3% !important;
+	margin-bottom:5% !important;
+}
+
+.off-canvas-wrap .inner-wrap{
+	min-height:568px;
+}
+
+.off-canvas-wrap .inner-wrap .tab-bar-section{
+	width:100%;
+	padding: 0 0;
+}
+
+.tabs dd > a{
+	padding: 0.8rem 1.064rem;
+}
+
+.tabs-content{
+	margin-bottom: 0px;
+}
+
+.tabs-content > .content {
+	padding:0px;
+}
+
+.columns-no-lr-padding{
+	padding-left:0;
+	padding-right:0;
+}

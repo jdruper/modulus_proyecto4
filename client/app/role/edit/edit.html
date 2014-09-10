@@ -1,0 +1,24 @@
+<form class="form" name="form" ng-submit="save(form)" novalidate>
+<div class="row">
+	<div class="small-12 columns text-right">
+		<h4><i class="fa fa-plus"></i>Agregar</h4>		
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
+		<label for="txtName">Nombre del Rol</label>
+		<input type="text" id="txtName" name="txtName" ng-model="role.name" placeholder="e.g. Contabilidad, Secretaria" required>
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
+		<label for="txtDescripcion">Descripci&oacute;n</label>
+		<input type="text" id="txtDescripcion" ng-model="role.description" placeholder="propósito principal de este rol" required>
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns text-right">
+		<button type="submit" class="button expand">Guardar</button>
+	</div>
+</div>
+</form>

@@ -1,0 +1,74 @@
+<div class="off-canvas-wrap">
+    <div class="inner-wrap">
+        <nav class="tab-bar">
+            <section class="tab-bar-section">
+              <div class="row">
+                <div class="left-off-canvas-toggle small-4 columns text-left navbar-modulus">
+                  <span class="navbar-title">Modulus</span><a> <i class="fa fa-bars fa-lg"></i></a>
+                </div>
+                <div class="small-8 columns text-right">
+                 <div class="small-4 columns">
+                   <a class="left-off-canvas-toggle"> <i class="fa fa-search fa-lg"></i></a>
+                 </div>
+                 <div class="small-4 columns">
+                   <a class="left-off-canvas-toggle"> <i class="fa fa-gear fa-lg"></i></a>
+                 </div>
+                 <div class="small-4 columns">
+                    <a class="left-off-canvas-toggle"> <i class="fa fa-user fa-lg"></i></a>
+                 </div>
+                </div>
+              </div>
+            </section>            
+        </nav>
+        <aside class="left-off-canvas-menu">
+          <div class="row">
+            <div class="small-12 columns columns-no-lr-padding">
+                <tabset>
+                <tab select="setCurrentTab('Modulus')" class="text-center" >
+                  <tab-heading>
+                     <i class="fa fa-bars fa-lg"></i>
+                     <span ng-show="currentTab == 'Modulus'">Modulus</span>
+                  </tab-heading>
+                  <div ng-include="'app/directives/offcanvasNavbar/modulusMenu.html'"></div>
+                </tab>
+                <tab select="setCurrentTab('Buscar')" class="text-center">
+                  <tab-heading>
+                    <i class="fa fa-search fa-lg"></i>
+                    <span ng-show="currentTab == 'Buscar'">Buscar</span>
+                  </tab-heading>
+                  <div ng-include="'app/directives/offcanvasNavbar/searchMenu.html'"></div>
+                </tab>
+                <tab select="setCurrentTab('Configuracion')" class="text-center">
+                  <tab-heading>
+                    <i class="fa fa-gear fa-lg"></i>
+                    <span ng-show="currentTab == 'Configuracion'">Configuraci&oacute;n</span>
+                  </tab-heading>
+                  <div ng-include="'app/directives/offcanvasNavbar/configurationMenu.html'"></div>
+                </tab>
+                <tab select="setCurrentTab('Seguridad')" class="text-center">
+                  <tab-heading>
+                    <i class="fa fa-user fa-lg"></i>
+                    <span ng-show="currentTab == 'Seguridad'">Seguridad</span>
+                  </tab-heading>
+                  <div ng-include="'app/directives/offcanvasNavbar/securityMenu.html'"></div>
+                </tab>
+              </tabset> 
+            </div>
+          </div>
+          <div class="row" style="position:fixed; bottom:0px; right:0px">
+            <div class="small-12 columns text-right menu-panel">
+              <a class="left-off-canvas-toggle"><i class="fa fa-close fa-2x"></i></a>                       
+            </div>
+          </div>
+        </aside>
+        <aside class="right-off-canvas-menu">
+            <ul class="off-canvas-list">
+                <li><a href="#">Right Sidebar</a></li>
+            </ul>
+        </aside>
+        <section class="main-section">
+            <div class="small-12 columns columns-no-lr-padding" ng-transclude>
+            </div>
+        </section>     
+    </div>
+</div>
