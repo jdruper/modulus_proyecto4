@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('modulusIoApp')
-  .controller('RoleEditCtrl', function ($scope, $state, Role, messageCenterService) {
+  .controller('RoleEditCtrl', function ($document, $scope, $state, Role, messageCenterService, $timeout) {
 
   	$scope.role = new Role;            
 
@@ -13,8 +13,11 @@ angular.module('modulusIoApp')
           $scope.role.$save()
           .then( function() {
             // Account created, redirect to home
-            messageCenterService.add('success', 'Datos del rol almacenados.', { status: messageCenterService.status.permanent });
             $state.go('role.list');
+            $timeout(function () {
+              messageCenterService.add('success', 'Datos del rol almacenados.', { status: messageCenterService.status.shown });
+              
+            }, 500);
           })
           .catch( function(err) {
             err = err.data;
@@ -29,7 +32,10 @@ angular.module('modulusIoApp')
          }
          else{
            //$scope.alerts.push({type:'error radius', msg:'Por favor revise los campos marcados en rojo.'})
-           messageCenterService.add('warning', 'Revise los campos marcados en rojo.', { status: messageCenterService.status.permanent });
+
+          if ($document.find('div.alert-box').length <= 0) {
+            messageCenterService.add('danger', 'Revise los campos marcados en rojo.', { status: messageCenterService.status.shown });
+          }
          }    
       }; 
 
