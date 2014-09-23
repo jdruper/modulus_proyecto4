@@ -1,31 +1,34 @@
 <div class="row">
-<div class="small-12 columns data-panel">                                              
-                          <div class="small-4 columns text-left menu-heading">
-                              <h3 class="internal-header">Roles</h3>
-                          </div>
-                          <div class="small-8 columns">
-                            <div class="menu-options">
-                              <div class="small-4 columns text-right">
-                                <a ui-sref="role.list">
-                                  <i class="fa fa-list fa-fw fa-2x"></i>
-                                </a>
-                              </div>
-                              <div class="small-4 columns text-right">
-                                <a ui-sref="role.create">
-                                  <i class="fa fa-plus fa-fw fa-2x"></i>
-                                </a>
-                              </div>
-                              <div class="small-4 columns text-right">
-                               <a ui-sref="role.delete">
-                                <i class="fa fa-trash fa-fw fa-2x"></i>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                    </div>
+  <div class="small-12 columns data-panel">
+    <div class="small-12 columns text-center menu-heading">
+      <h3 class="internal-header">ROLES</h3>
+    </div>
+  </div>
+  <div class="small-12 columns search-bar-wrapper">
+    <div class="small-2 search-button">
+      <i class="fa fa-search fa-lg"></i>
+    </div>
+    <div class="small-10 search-input">
+      <input type="text" class="search-bar" placeholder="Búsqueda">
+    </div>
+  </div>
+  <div class="small-12 columns header-options">
+    <a ui-sref="role.list" ng-click="selectedTab(1)">
+      <div class="small-6 columns text-center" ng-class="{ 'active':selected(1) }">
+        <i class="fa fa-list fa-fw fa-2x"></i>
+        <h4 class="internal-header">Listar</h3>
+      </div>
+    </a>
+    <a ui-sref="role.create" ng-click="selectedTab(2)">
+      <div class="small-6 columns text-center" ng-class="{ 'active':selected(2) }">
+        <i class="fa fa-plus fa-fw fa-2x"></i>
+        <h4 class="internal-header">Agregar</h3>
+      </div>
+    </a>
+  </div>
 </div>
 <div class="row">
-	<div class="small-12  columns data-panel" ng-show="form.txtUsername.$invalid">
+	<div class="small-12 columns data-panel" ng-show="form.txtUsername.$invalid">
 		<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
 	</div>
 </div>

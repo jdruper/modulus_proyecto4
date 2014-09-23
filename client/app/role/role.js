@@ -6,6 +6,7 @@ angular.module('modulusIoApp')
       .state('role', {
         url: '/role',
         templateUrl: 'app/role/role.html',
+        controller: 'RoleCtrl',
         abstract: true
       })
       .state('role.list', {
@@ -33,4 +34,15 @@ angular.module('modulusIoApp')
   angular.module('modulusIoApp')
   .factory('Role', function ($resource) {
     return $resource('/api/roles');
+  }).controller('RoleCtrl', function ($scope) {
+
+    $scope.tab = 1;
+
+    $scope.selectedTab = function(setTab) {
+      $scope.tab = setTab;
+    };
+
+    $scope.selected = function(checkTab) {
+      return $scope.tab === checkTab;
+    };
   });

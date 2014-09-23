@@ -5,7 +5,8 @@ angular.module('modulusIoApp')
     $stateProvider
       .state('user', {
         url: '/user',
-        templateUrl: 'app/user/user.html',        
+        templateUrl: 'app/user/user.html',
+        controller: 'UserCtrl',      
         abstract: true
       })
       .state('user.list', {

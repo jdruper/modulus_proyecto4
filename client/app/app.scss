@@ -3,6 +3,23 @@
 
  $fa-font-path: "/bower_components/font-awesome/fonts";
  @import 'font-awesome/scss/font-awesome';
+ 
+ @font-face {
+  font-family: 'MyLogoFont';
+  src: url('../assets/fonts/code_pro_light_demo.eot'); /* IE9 Compat Modes */
+  src: url('../assets/fonts/code_pro_light_demo.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/code_pro_light_demo.woff') format('woff'), /* Modern Browsers */
+       url('../assets/fonts/code_pro_light_demo.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../assets/fonts/code_pro_light_demo.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+ @font-face {
+  font-family: 'MyHeaderOptsFont';
+  src: url('../assets/fonts/hero.eot'); /* IE9 Compat Modes */
+  src: url('../assets/fonts/hero.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/hero.woff') format('woff'), /* Modern Browsers */
+       url('../assets/fonts/hero.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../assets/fonts/hero.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
 
 /**
  * App-wide Styles
@@ -24,6 +41,50 @@
 
 .error-border {
   border: 1px solid red !important;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 17px;
+}
+
+.active {
+  background: #16a085 !important;
+}
+
+.list-title-span {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  color: #333333;
+}
+
+.list-body-span {
+  font-size: 15px;
+  color: #52b3d9;
+  letter-spacing: -1px;
+}
+
+.list-foot-span {
+  font-size: 15px;
+  font-weight: 100;
+  color: black;
+  color: #333333;
+}
+
+.form-margin-top {
+  margin-top: 15px !important;
+}
+
+.form-margin-bottom {
+  margin-bottom: 13px !important;
+}
+
+.button-margin-top {  
+  margin-top: 30px !important;
 }
 
 // Component styles are injected through grunt

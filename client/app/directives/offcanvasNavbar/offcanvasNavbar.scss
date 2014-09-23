@@ -1,8 +1,6 @@
 .navbar-title{
-	margin-right:2%;
-	font-family: $header-font-family;
+	font-family: 'MyLogoFont';
 	font-size: 17px;
-	font-weight: lighter;
 }
 
 .left-off-canvas-menu{
@@ -32,9 +30,17 @@ dd.active a{
 }
 
 .data-panel{	
-	padding:5%;
-	border-bottom:solid 1px #12CCC3;
-	margin-bottom:5%;
+	padding:10%;
+	/*border-bottom:solid 1px #12CCC3;*/
+	background: #1bbc9b; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #1bbc9b 0%, #5bd0b6 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#1bbc9b), color-stop(100%,#5bd0b6)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  #1bbc9b 0%,#5bd0b6 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  #1bbc9b 0%,#5bd0b6 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  #1bbc9b 0%,#5bd0b6 100%); /* IE10+ */
+	background: linear-gradient(135deg,  #1bbc9b 0%,#5bd0b6 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1bbc9b', endColorstr='#5bd0b6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
 .menu-container h5{
 	color:$primary-color;
@@ -50,24 +56,34 @@ dd.active a{
 }
 
 .menu-heading h3{
-	color:#fff!important;	
+	color:white !important;	
+	text-align: center;
 }
 
 .menu-heading i{
 	padding-bottom:10%;
 }
 
-.menu-heading .internal-header{
-	color:#222 !important;
-}
-
-.menu-options{
+/*.menu-options{
 	margin-top:3% !important;
-	margin-bottom:5% !important;
-}
+	margin-bottom:10% !important;
+}*/
+	
+.header-options {
+	padding: 0 !important;
+	margin-bottom: 20px;
 
-.off-canvas-wrap .inner-wrap{
-	min-height:568px;
+	i, h4 {
+		color: white;
+	}
+	h4 {
+		font-family: MyHeaderOptsFont, sans-serif;
+	}
+
+	& > a > div {
+		background: #1bbc9b;
+		padding: 6%;
+	}
 }
 
 .off-canvas-wrap .inner-wrap .tab-bar-section{
@@ -93,13 +109,48 @@ dd.active a{
 }
 
 .menuIcon {
+	float: left;
+	color: white;
+}
+
+.search-icon {
+	color: white;
 	float: right;
-	margin-right: 15px;
 }
 
 .menu-link h3{
 	color: white;
 	margin: 20px 0;
-	font-size: 1rem;
 	font-weight: 200;
+}
+
+accordion h3 {
+	font-family: $body-font-family;
+	font-size: 1rem !important;
+}
+
+.search-bar-wrapper {
+
+	padding: 0 !important;
+	float: left;
+	
+	.search-button {
+		background: blue;
+		padding: 4%;
+		float: left;
+		text-align: center;
+		color: white;
+		background: #52B3D9;
+	}
+	
+	.search-input {
+		float: right;
+
+		input.search-bar {
+			margin: 0;
+			border: none;
+			padding: 5%;
+		}
+	}
+
 }
