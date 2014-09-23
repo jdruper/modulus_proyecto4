@@ -1,6 +1,8 @@
 .navbar-title{
 	margin-right:2%;
 	font-family: $header-font-family;
+	font-size: 17px;
+	font-weight: lighter;
 }
 
 .left-off-canvas-menu{
@@ -13,6 +15,7 @@
 
 .navbar-modulus{
 	padding-right: 0 !important;
+	width: 100% !important;
 }
 
 .tabs{
@@ -87,4 +90,16 @@ dd.active a{
 .columns-no-lr-padding{
 	padding-left:0;
 	padding-right:0;
+}
+
+.menuIcon {
+	float: right;
+	margin-right: 15px;
+}
+
+.menu-link h3{
+	color: white;
+	margin: 20px 0;
+	font-size: 1rem;
+	font-weight: 200;
 }

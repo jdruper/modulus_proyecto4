@@ -3,10 +3,11 @@
         <nav class="tab-bar">
             <section class="tab-bar-section">
               <div class="row">
-                <div class="left-off-canvas-toggle small-4 columns text-left navbar-modulus">
-                  <span class="navbar-title">Modulus</span><a> <i class="fa fa-bars fa-lg"></i></a>
+                <div class="small-4 columns text-left navbar-modulus">
+                  <span class="navbar-title">MODULUS</span>
+                  <a class="left-off-canvas-toggle menuIcon"> <i class="fa fa-bars fa-lg"></i></a>
                 </div>
-                <div class="small-8 columns text-right">
+                <!-- <div class="small-8 columns text-right">
                  <div class="small-4 columns">
                    <a class="left-off-canvas-toggle"> <i class="fa fa-search fa-lg"></i></a>
                  </div>
@@ -16,12 +17,12 @@
                  <div class="small-4 columns">
                     <a class="left-off-canvas-toggle"> <i class="fa fa-user fa-lg"></i></a>
                  </div>
-                </div>
+                </div> -->
               </div>
             </section>            
         </nav>
         <aside class="left-off-canvas-menu">
-          <div class="row">
+          <!-- <div class="row">
             <div class="small-12 columns columns-no-lr-padding">
                 <tabset>
                 <tab select="setCurrentTab('Modulus')" class="text-center" >
@@ -53,6 +54,56 @@
                   <div ng-include="'app/directives/offcanvasNavbar/securityMenu.html'"></div>
                 </tab>
               </tabset> 
+            </div>
+          </div> -->
+          <div>
+            <label class="checkbox">
+              <input type="checkbox" ng-model="oneAtATime">
+              Open only one at a time
+            </label>
+
+            <accordion close-others="oneAtATime">
+              <accordion-group>
+                <accordion-heading>
+                  <i class="fa fa-bars fa-lg"></i>
+                  <span>Modulus</span>
+                </accordion-heading>
+                
+                  <a ui-sref="user.list" class="left-off-canvas-toggle menu-link"><h3>Clientes</h3></a> 
+                
+                
+                  <a ui-sref="role.list" class="left-off-canvas-toggle menu-link"><h3>Citas</h3></a> 
+                
+                  <a ui-sref="role.list" class="left-off-canvas-toggle menu-link"><h3>Expedientes</h3></a>
+              </accordion-group>
+              <accordion-group>
+                <accordion-heading>
+                  <i class="fa fa-gear fa-lg"></i>
+                  <span>Configuraci&oacute;n</span>
+                </accordion-heading>
+                
+                  <a ui-sref="user.list" class="left-off-canvas-toggle menu-link"><h3>Su Cuenta</h3></a> 
+
+                  <a ui-sref="role.list" class="left-off-canvas-toggle menu-link"><h3>General</h3></a> 
+
+                  <a ui-sref="role.list" class="left-off-canvas-toggle menu-link"><h3>Modulus</h3></a>
+              </accordion-group>
+              <accordion-group>
+                  <accordion-heading>
+                    <i class="fa fa-user fa-lg"></i>
+                    <span>Seguridad</span>
+                  </accordion-heading>
+
+                  <a ui-sref="user.list" class="left-off-canvas-toggle menu-link"><h3>Usuarios</h3></a>
+                  
+                  <a ui-sref="role.list" class="left-off-canvas-toggle menu-link"><h3>Roles</h3></a>
+
+              </accordion-group>
+            </accordion>
+          </div>
+          <div class="row" style="position:fixed; bottom:0px; right:0px">
+            <div class="small-12 columns text-right menu-panel">
+              <a class="left-off-canvas-toggle menu-link"><i class="fa fa-close fa-2x"></i></a>                       
             </div>
           </div>
           <div class="row" style="position:fixed; bottom:0px; right:0px">

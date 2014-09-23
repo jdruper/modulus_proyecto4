@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('modulusIoApp')
-  .controller('RoleEditCtrl', function ($document, $scope, $state, Role, messageCenterService, $timeout) {
+  .controller('RoleEditCtrl', function ($scope, $state, Role, messageCenterService, $timeout) {
 
   	$scope.role = new Role;            
 
