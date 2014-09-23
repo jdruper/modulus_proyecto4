@@ -5,8 +5,31 @@
 .list-item{
 	padding: 5%;
 	border-bottom:1px solid #ccc;
+	min-height:102px;
+}
+
+.list-item span{
+	margin-top:19px;
+	margin-right:10px;	
+}
+
+.list-item span.fa{
+	color: #bbb;
+}
+
+.list-item-title{
+	font-size:1.15em;
+}
+
+.list-item-content{
+	font-size:0.85em;
 }
 
 .list-container a{
 	color:#222;
+}
+
+.sidemenu{
+	left:-100%;
+	display:none;
 }

@@ -8,13 +8,13 @@
 <div class="row">
 	<div class="small-12 columns">
 		<label for="txtName">Nombre del Rol</label>
-		<input type="text" id="txtName" name="txtName" ng-model="role.name" placeholder="e.g. Contabilidad, Secretaria" ng-class="{ errorBorde: submitted && form.txtName.$invalid }" required>
+		<input type="text" id="txtName" name="txtName" ng-model="role.name" placeholder="e.g. Contabilidad, Secretaria" ng-class="{ 'error-border': submitted && form.txtName.$invalid }" required>
 	</div>
 </div>
 <div class="row">
 	<div class="small-12 columns">
 		<label for="txtDescripcion">Descripci&oacute;n</label>
-		<input type="text" id="txtDescripcion" name="txtDesc" ng-model="role.description" placeholder="propósito principal de este rol" ng-class="{ errorBorde: submitted && form.txtDesc.$invalid }" required>
+		<input type="text" id="txtDescripcion" name="txtDesc" ng-model="role.description" placeholder="propósito principal de este rol" ng-class="{ 'error-border': submitted && form.txtDesc.$invalid }" required>
 	</div>
 </div>
 <div class="row">

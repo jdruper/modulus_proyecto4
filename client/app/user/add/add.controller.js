@@ -1,22 +1,24 @@
 'use strict';
 
 angular.module('modulusIoApp')
-  .controller('UserEditCtrl', function ($document, $scope, $state, User, socket, Role, messageCenterService, $location) {
+  .controller('UserAddCtrl', function ($document, $scope, $state, User, socket, Role, messageCenterService) {
       
-      $scope.roles = Role.query({});      
+      $scope.roles = Role.query({});
+      $scope.heading = 'Agregar';
+      $scope.user = new User;
       
-      $scope.user = User.get({id:$state.params.id},function(){});
-      $scope.heading = 'Editar';
-   
+  
       $scope.save = function(form) {
         $scope.submitted = true;
 
         if(form.$valid) {
+        
           $scope.user.$save()
           .then( function() {
             messageCenterService.reset();
             messageCenterService.add('success', 'Datos del usuario almacenados.', { status: messageCenterService.status.shown, timeout:4000 });
-            $scope.submitted = false;
+            $scope.submitted = false;    
+            $scope.user = new User;       
           })
           .catch( function(err) {
             err = err.data;

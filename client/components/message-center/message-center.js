@@ -22,7 +22,7 @@ MessageCenterModule.
           permanent: 'permanent'
         },
         add: function (type, message, options) {
-          var availableTypes = ['info', 'warning', 'danger', 'success'],
+          var availableTypes = ['info', 'warning', 'alert', 'success', 'secondary'],
             service = this;
           options = options || {};
           if (availableTypes.indexOf(type) == -1) {
@@ -31,8 +31,8 @@ MessageCenterModule.
           var messageObject = {
             type: type,
             status: options.status || this.status.unseen,
-            processed: false,
-            close: function() {
+            processed: false,            
+            close: function() {                            
               return service.remove(this);
             }
           };
@@ -51,7 +51,7 @@ MessageCenterModule.
           this.mcMessages.splice(index, 1);
         },
         reset: function () {
-          this.mcMessages = [];
+          this.mcMessages.splice(0, this.mcMessages.length);
         },
         removeShown: function () {
           for (var index = this.mcMessages.length - 1; index >= 0; index--) {
@@ -106,7 +106,7 @@ MessageCenterModule.
         };
         $rootScope.$on('$locationChangeStart', changeReaction);
 
-        scope.animation = attrs.animation || 'fade in';
+        scope.animation = attrs.animation || 'animated fadeInDown';
       }
     };
   }]);

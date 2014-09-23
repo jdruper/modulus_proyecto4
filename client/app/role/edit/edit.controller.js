@@ -12,12 +12,10 @@ angular.module('modulusIoApp')
         
           $scope.role.$save()
           .then( function() {
-            // Account created, redirect to home
-            $state.go('role.list');
-            $timeout(function () {
-              messageCenterService.add('success', 'Datos del rol almacenados.', { status: messageCenterService.status.shown });
-              
-            }, 500);
+            messageCenterService.reset();
+            messageCenterService.add('success', 'Datos del rol almacenados.', { status: messageCenterService.status.shown, timeout:4000 });            
+            $scope.role = new Role;
+            $scope.submitted = false;
           })
           .catch( function(err) {
             err = err.data;
@@ -31,13 +29,8 @@ angular.module('modulusIoApp')
           });
          }
          else{
-           //$scope.alerts.push({type:'error radius', msg:'Por favor revise los campos marcados en rojo.'})
-
-          if ($document.find('div.alert-box').length <= 0) {
-            messageCenterService.add('danger', 'Revise los campos marcados en rojo.', { status: messageCenterService.status.shown });
-          }
+            messageCenterService.reset();
+            messageCenterService.add('alert', 'Revise los campos marcados en rojo.', { status: messageCenterService.status.shown });
          }    
       }; 
-
-    
   });

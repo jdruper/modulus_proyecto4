@@ -4,7 +4,8 @@ angular.module('modulusIoApp')
   .factory('Auth', function Auth($location, $rootScope, $http, User, $cookieStore, $q) {
     var currentUser = {};
     if($cookieStore.get('token')) {
-      currentUser = User.get();
+      currentUser = User.get({},function(){
+      });
     }
 
     return {

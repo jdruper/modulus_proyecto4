@@ -1,13 +1,20 @@
 <form class="form" name="form" ng-submit="save(form)" novalidate>
 <div class="row">
-	<div class="small-12 columns text-right">
-		<h4><i class="fa fa-plus"></i> {{heading}}</h4>		
+	<div class="small-12 columns">
+		<label for="txtUsername">Correo Electr&oacute;nico</label>
+		<input type="email" id="txtUsername" name="txtUsername" ng-model="user.email" placeholder="usuario@modulus.io" ng-class="{ 'error-border': submitted && form.txtUsername.$invalid }" required>
 	</div>
 </div>
 <div class="row">
 	<div class="small-12 columns">
-		<label for="txtUsername">Correo Electr&oacute;nico</label>
-		<input type="email" id="txtUsername" name="txtUsername" ng-model="user.email" placeholder="usuario@modulus.io" ng-class="{ 'error-border': submitted && form.txtUsername.$invalid }" required>
+		<label for="txtPassword">Contrase&ntilde;a</label>
+		<input type="password" id="txtPassword" name="txtPassword" ng-model="user.password" placeholder="m&iacute;nimo 6 caract&eacute;res" required ng-minlength='6' ng-class="{ 'error-border': submitted && form.txtPassword.$invalid }">
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
+		<label for="txtPasswordVerify">Repetir Contrase&ntilde;a</label>
+		<input type="password" id="txtPasswordVerify" name="txtPasswordVerify" placeholder="vuelva a escribir su contrase&ntilde;a" required pw-check="txtPassword" ng-class="{ 'error-border': submitted && form.txtPasswordVerify.$invalid }" ng-model="passwordVerify">
 	</div>
 </div>
 <div class="row">

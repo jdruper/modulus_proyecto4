@@ -5,8 +5,7 @@ angular.module('modulusIoApp')
     $stateProvider
       .state('user', {
         url: '/user',
-        templateUrl: 'app/user/user.html',
-        controller: 'UserCtrl',
+        templateUrl: 'app/user/user.html',        
         abstract: true
       })
       .state('user.list', {
@@ -16,8 +15,8 @@ angular.module('modulusIoApp')
       })
       .state('user.create', {
         url: '/create',
-        templateUrl: 'app/user/edit/edit.html',        
-        controller: 'UserEditCtrl'
+        templateUrl: 'app/user/add/add.html',        
+        controller: 'UserAddCtrl'
       })      
       .state('user.edit', {
         url: '/edit/{id}',
@@ -32,9 +31,9 @@ angular.module('modulusIoApp')
   });
 
   angular.module('modulusIoApp')
-  .factory('User', function ($resource) {
+  .factory('User', ['customResource', function ($resource) {
     return $resource('/api/users/:id/:controller', {
-      id: '@_id'
+      id: '@_id' 
     },
     {
       changePassword: {
@@ -43,8 +42,14 @@ angular.module('modulusIoApp')
           controller:'password'
         }
       },
-      get: {
-        method: 'GET'        
+       get: {
+        method: 'GET',
+        params: {
+          id:'me'
+        }
+      },
+      update: {
+        method: 'PUT'
       }
 	  });
-  });
+  }]);
