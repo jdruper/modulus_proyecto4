@@ -7,7 +7,7 @@ angular.module('modulusIoApp')
       'link': '/'
     }];
 
-
+    $scope.checked;
     $scope.currentTab = 'Modulus';    
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;

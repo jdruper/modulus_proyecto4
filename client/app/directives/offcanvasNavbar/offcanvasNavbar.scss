@@ -1,3 +1,7 @@
+.tab-bar-section{
+	position:relative;
+}
+
 .navbar-title{
 	font-family: 'MyLogoFont';
 	font-size: 17px;
@@ -152,5 +156,8 @@ accordion h3 {
 			padding: 5%;
 		}
 	}
+}
 
+.ng-pageslide{	
+	background-color: #ccc;
 }

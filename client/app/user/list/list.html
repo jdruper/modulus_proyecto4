@@ -16,17 +16,17 @@
 			</div>
 			<div class="small-2 columns list-item">
 			   	<div class="small-10 columns">
-			   		<a class="trash"><span class="fa fa-angle-left fa-2x text-right"></span></a>
+			   		<a pageslide="right" ps-class="list-submenu" ps-auto-close="true" ps-speed="0.5" href="#submenu"><span class="fa fa-angle-left fa-2x text-right"></span></a>
 			   	</div>
 			        <!-- <a ng-click="delete(user)" class="trash"><span class="fa fa-trash text-right"></span></a> -->
 			</div>
 		</div>
-		<div class="small-12 columns sidemenu">
-			<div class="small-6">
-				<a ng-click="delete(user)" class="trash"><i class="fa fa-pencil text-right"></i></a>
+		<div id="submenu" class="small-12 columns">
+			<div class="small-6 columns">
+				<a ng-click="delete(user)"><i class="fa fa-pencil text-right"></i></a>
 			</div>
-			<div class="small-6">
-				<a ng-click="delete(user)" class="trash"><i class="fa fa-trash text-right"></i></a>
+			<div class="small-6 columns">
+				<a ng-click="delete(user)"><i class="fa fa-trash text-right"></i></a>
 			</div>
 		</div>
 		

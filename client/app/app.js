@@ -7,7 +7,8 @@ angular.module('modulusIoApp', [
   'btford.socket-io',
   'ui.router',
   'mm.foundation',
-  'MessageCenterModule'
+  'MessageCenterModule',
+  'pageslide-directive'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
