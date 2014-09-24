@@ -23,7 +23,7 @@ pageslideDirective.directive('pageslide', [
                 var param = {};
                 param.side = attrs.pageslide || 'right';
                 param.speed = attrs.psSpeed || '0.5';
-                param.size = attrs.psSize || '300px';
+                param.size = attrs.psSize || '100%';
                 param.className = attrs.psClass || 'ng-pageslide';
 
                 /* DOM manipulation */
@@ -44,7 +44,7 @@ pageslideDirective.directive('pageslide', [
                 slider.style.transitionDuration = param.speed + 's';
                 slider.style.webkitTransitionDuration = param.speed + 's';
                 slider.style.zIndex = 1000;
-                slider.style.position = 'fixed';
+                slider.style.position = 'absolute';
                 slider.style.width = 0;
                 slider.style.height = 0;
                 slider.style.transitionProperty = 'width, height';

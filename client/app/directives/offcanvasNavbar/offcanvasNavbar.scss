@@ -87,6 +87,13 @@ dd.active a{
 	& > a > div {
 		background: #1bbc9b;
 		padding: 5%;
+		
+		&.left-option {
+			box-shadow: inset 7px 0 9px -7px rgba(0,0,0,0.3);
+		}
+		&.right-option {
+			box-shadow: inset -7px 0 9px -7px rgba(0,0,0,0.3);
+		}
 	}
 }
 
@@ -122,13 +129,22 @@ dd.active a{
 	float: right;
 }
 
+div.content .menu-link:last-child h3 {
+	border-bottom: none;
+}
 .menu-link h3{
 	color: white;
-	margin: 20px 0;
+	padding: 20px 0;
 	font-weight: 200;
+	border-bottom: 1px solid grey;
+		
+	&:hover {
+		background: #e1f1eb;
+		color: black;
+	}
 }
 
-accordion h3 {
+.accordion h3 {
 	font-family: $body-font-family;
 	font-size: 1rem !important;
 }
@@ -158,6 +174,21 @@ accordion h3 {
 	}
 }
 
-.ng-pageslide{	
-	background-color: #ccc;
+.ng-pageslide, dl > dd:last-child .content{	
+	background-color: #424343;
+	text-align: center;
+}
+
+#mainMenu >div > div {
+	background: #EFEFEF;
+	box-shadow: 0 1px 6px -2px rgba(0,0,0,0.7);
+}
+
+#mainMenu-close {
+	color: white!important;
+	background: #c84f51;
+	border-radius: 5px;
+	padding: 5px 15px;
+	font-weight: 100;
+	box-shadow: 0 6px #ab3c3c;
 }

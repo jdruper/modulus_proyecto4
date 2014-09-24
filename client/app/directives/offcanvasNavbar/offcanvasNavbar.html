@@ -1,54 +1,53 @@
 <nav class="tab-bar">
-             <section class="tab-bar-section">
-<div class="row navbar-modulus">
-                <div class="small-4 columns text-left">
-                  <a class="menuIcon" pageslide="left" ps-custom-top="56px" ps-auto-close="true" ps-speed="0.5" href="#mainMenu"><i class="fa fa-bars fa-lg"></i></a>
-                </div>          
-                <div class="small-4 columns">
-                  <span class="navbar-title">MODULUS</span>
-                </div>      
-                <div class="small-4 columns">
-                  <a class="search-icon" pageslide="right" ps-auto-close="true" ps-speed="0.5" href="#searchMenu"><i class="fa fa-search fa-lg"></i></a>
-                </div>          
-</div>
-</section>
+  <section class="tab-bar-section">
+    <div class="row navbar-modulus">
+      <div class="small-4 columns text-left">
+        <a class="menuIcon" pageslide="left" ps-custom-top="55px" ps-auto-close="true" ps-speed="0.5" href="#mainMenu"><i class="fa fa-bars fa-lg"></i></a>
+      </div>          
+      <div class="small-4 columns">
+        <span class="navbar-title">MODULUS</span>
+      </div>      
+      <div class="small-4 columns">
+        <a class="search-icon" pageslide="right" ps-auto-close="true" ps-speed="0.5" href="#searchMenu"><i class="fa fa-search fa-lg"></i></a>
+      </div>          
+    </div>
+  </section>
 </nav>
 <div id="mainMenu">            
-    <div>
-        <accordion close-others="false">
-              <accordion-group>
-                <accordion-heading>
-                  <i class="fa fa-bars fa-lg"></i>
-                  <span>Modulus</span>
-                </accordion-heading>
-                  <a ui-sref="user.list" class="menu-link"><h3>Clientes</h3></a> 
-                  <a ui-sref="role.list" class="menu-link"><h3>Citas</h3></a> 
-                  <a ui-sref="role.list" class="menu-link"><h3>Expedientes</h3></a>
-              </accordion-group>
-              <accordion-group>
-                <accordion-heading>
-                  <i class="fa fa-gear fa-lg"></i>
-                  <span>Configuraci&oacute;n</span>
-                </accordion-heading>
-                  <a ui-sref="user.list" class="menu-link"><h3>Su Cuenta</h3></a> 
-                  <a ui-sref="role.list" class="menu-link"><h3>General</h3></a> 
-                  <a ui-sref="role.list" class="menu-link"><h3>Modulus</h3></a>
-              </accordion-group>
-              <accordion-group>
-                  <accordion-heading>
-                    <i class="fa fa-user fa-lg"></i>
-                    <span>Seguridad</span>
-                  </accordion-heading>
-                  <a ui-sref="user.list" class="menu-link"><h3>Usuarios</h3></a>
-                  <a ui-sref="role.list" class="menu-link"><h3>Roles</h3></a>
-              </accordion-group>
-            </accordion>
-            <div class="row" style="position:fixed; bottom:0px; right:0px">
-            <div class="small-12 columns text-right menu-panel">
-              <a href="#" id="mainMenu-close"><i class="fa fa-close fa-2x"></i></a>
-            </div>
-          </div>
-    </div>    
+  <div>
+    <div class="small-12 columns text-right menu-panel">
+      <a href="#" id="mainMenu-close">SALIR</a>
+    </div>
+    <accordion close-others="false">
+      <accordion-group>
+        <accordion-heading>
+          <i class="fa fa-bars fa-lg"></i>
+          <span>Modulus</span>
+        </accordion-heading>
+          <a ui-sref="user.list" class="menu-link"><h3>Clientes</h3></a> 
+          <a ui-sref="role.list" class="menu-link"><h3>Citas</h3></a> 
+          <a ui-sref="role.list" class="menu-link"><h3>Expedientes</h3></a>
+      </accordion-group>
+      <accordion-group>
+        <accordion-heading>
+          <i class="fa fa-gear fa-lg"></i>
+          <span>Configuraci&oacute;n</span>
+        </accordion-heading>
+          <a ui-sref="user.list" class="menu-link"><h3>Su Cuenta</h3></a> 
+          <a ui-sref="role.list" class="menu-link"><h3>General</h3></a> 
+          <a ui-sref="role.list" class="menu-link"><h3>Modulus</h3></a>
+      </accordion-group>
+      <accordion-group>
+          <accordion-heading>
+            <i class="fa fa-user fa-lg"></i>
+            <span>Seguridad</span>
+          </accordion-heading>
+          <a ui-sref="user.list" class="menu-link"><h3>Usuarios</h3></a>
+          <a ui-sref="role.list" class="menu-link"><h3>Roles</h3></a>
+      </accordion-group>
+    </accordion>
+    <div class="row" style="position:fixed; bottom:0px; right:0px"></div>
+  </div>    
 </div>
 <div id="searchMenu">            
     <div>
