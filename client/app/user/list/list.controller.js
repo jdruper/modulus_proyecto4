@@ -10,4 +10,12 @@ angular.module('modulusIoApp')
     	$scope.heading = 'Eliminar';
     }
 
+    $scope.delete = function(user){    	
+    	user.$delete()
+    	.then(function(){
+    		$scope.users = User.query({});
+    	});
+
+    }
+
   });
