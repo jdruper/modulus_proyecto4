@@ -16,8 +16,8 @@ angular.module('modulusIoApp')
       })
       .state('role.create', {
         url: '/create',
-        templateUrl: 'app/role/edit/edit.html',        
-        controller: 'RoleEditCtrl'
+        templateUrl: 'app/role/add/add.html',        
+        controller: 'RoleAddCtrl'
       })      
       .state('role.edit', {
         url: '/edit/{id}',
@@ -29,20 +29,15 @@ angular.module('modulusIoApp')
         templateUrl: 'app/role/list/list.html',        
         controller: 'RoleListCtrl'
       })
-  });
+  })
 
-  angular.module('modulusIoApp')
-  .factory('Role', function ($resource) {
-    return $resource('/api/roles');
-  }).controller('RoleCtrl', function ($scope) {
-
-    $scope.tab = 1;
-
-    $scope.selectedTab = function(setTab) {
-      $scope.tab = setTab;
-    };
-
-    $scope.selected = function(checkTab) {
-      return $scope.tab === checkTab;
-    };
-  });
+  .factory('Role', ['customResource', function ($resource) {
+    return $resource('/api/roles/:id/:controller', {
+      id: '@_id' 
+    },
+    {     
+      update: {
+        method: 'PUT'
+      }
+    });
+  }]);

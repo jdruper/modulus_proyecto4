@@ -1,0 +1,37 @@
+<form class="form" name="form" ng-submit="save(form)" novalidate>
+<div class="row form-margin-top">
+	<div class="small-12 columns">
+		<label class="form-margin-bottom list-foot-span" for="txtNombreCompleto">Nombre Completo</label>
+		<input type="text" id="txtNombreCompleto" name="txtNombreCompleto" ng-model="cliente.nombre_completo" placeholder="nombre completo del cliente" required ng-class="{ 'error-border': submitted && form.txtNombreCompleto.$invalid }">
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
+		<label class="form-margin-bottom list-foot-span" for="txtTelefono">Tel&eacute;fono</label>
+		<input type="text" id="txtTelefono" name="txtTelefono" ng-model="cliente.telefono" placeholder="8787-2222" required ng-class="{ 'error-border': submitted && form.txtTelefono.$invalid }">
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
+		<label class="form-margin-bottom list-foot-span" for="txtEmail">Correo Electr&oacute;nico</label>
+		<input type="email" id="txtEmail" name="txtEmail" ng-model="cliente.email" placeholder="cliente@extenal.com" ng-class="{ 'error-border': submitted && form.txtEmail.$invalid }">
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
+		<label class="form-margin-bottom list-foot-span" for="txtFechaNacimiento">Fecha de Nacimiento</label>
+		<input type="date" id="txtFechaNacimiento" name="txtFechaNacimiento" ng-model="cliente.fecha_nacimiento" ng-class="{ 'error-border': submitted && form.txtPassword.$invalid }">
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
+		<label class="form-margin-bottom list-foot-span" for="txtDireccion">Direcci&oacute;n</label>
+		<input type="text" id="txtTelefono" name="txtDireccion" ng-model="cliente.direccion" placeholder="lugar de residencia"  ng-class="{ 'error-border': submitted && form.txtTelefono.$invalid }">
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns text-right button-margin-top">
+		<button type="submit" class="button expand">Guardar</button>
+	</div>
+</div>
+</form>

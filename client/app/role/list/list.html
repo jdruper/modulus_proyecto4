@@ -1,14 +1,27 @@
 <div class="list-container">	
-	<div class="row" ng-repeat="role in roles">
-		<a ui-sref="role.edit({id: role._id})">
-			<div class="small-12 columns list-item">
-				<div class="small-12 columns">
-					<span class="list-title-span">{{role.name}}</span>
-				</div>
-				<div class="small-12 columns">
-			   		<span class="text-muted list-body-span">{{role.description}}</span>
-			   	</div>			   	
+	<div class="row" ng-repeat="role in roles">		
+	   <div class="small-12 columns edit-list">
+		  <div class="small-9 edit-list-info">
+			<div class="small-9 columns list-item-title list-title-span">
+				{{role.name}}
 			</div>
-		</a>
+			<div class="small-9 columns list-item-content">
+			   	<span class="text-muted list-body-span">{{role.description}}</span>
+			</div>			   	
+		</div>		
+		<div class="edit-list-arrow">
+		   	<a pageslide="right" href="#submenu"  repeat-index="{{$index}}" ps-class="list-submenu" ps-custom-top="300px" ps-auto-close="true" ps-speed="0.5"><span class="fa fa-angle-left fa-2x text-right"></span></a>
+		</div>
+		<div id="submenu" class="small-12 columns parent-slider">
+				<div class="small-2 columns close-slider">
+					<a id="submenu-close"><i class="fa fa-angle-right fa-2x"></i></a>
+				</div>
+				<div class="small-5 columns edit-slider">
+					<a ui-sref="role.edit({id: role._id})" href="#"><i class="fa fa-pencil text-right fa-2x"></i></a>
+				</div>
+				<div class="small-5 columns delete-slider">
+					<a ng-click="delete(role)"><i class="fa fa-trash text-right fa-2x"></i></a>
+				</div>
+		</div>
 	</div>
 </div>

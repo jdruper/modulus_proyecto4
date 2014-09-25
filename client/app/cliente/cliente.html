@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="small-12 columns data-panel">
+    <div class="small-12 columns text-center menu-heading">
+      <h3 class="internal-header">CLIENTES</h3>
+    </div>
+  </div>
+    <div class="small-12 columns search-bar-wrapper">
+    <div class="small-2 search-button">
+      <i class="fa fa-search fa-lg"></i>
+    </div>
+    <div class="small-10 search-input">
+      <input type="text" class="search-bar" placeholder="Búsqueda">
+    </div>
+  </div>
+  <div class="small-12 columns header-options">
+    <a ui-sref="cliente.list" ng-click="selectedTab(1)">
+      <div class="small-6 columns text-center right-option" ng-class="{ 'active':selected(1) }">
+        <i class="fa fa-list fa-fw fa-2x"></i>
+        <h4 class="internal-header">Listar</h3>
+      </div>
+    </a>
+    <a ui-sref="cliente.create" ng-click="selectedTab(2)">
+      <div class="small-6 columns text-center left-option" ng-class="{ 'active':selected(2) }">
+        <i class="fa fa-plus fa-fw fa-2x"></i>
+        <h4 class="internal-header">Agregar</h3>
+      </div>
+    </a>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <div mc-messages></div> 
+  </div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
+		<div ui-view=""></div>	
+	</div>
+</div> 

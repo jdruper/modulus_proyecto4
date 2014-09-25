@@ -139,8 +139,15 @@ h4 {
 // injector
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
+@import 'cliente/add/add.scss';
+@import 'cliente/cliente.scss';
+@import 'cliente/edit/edit.scss';
+@import 'cliente/list/list.scss';
 @import 'directives/offcanvasNavbar/offcanvasNavbar.scss';
+@import 'expediente/expediente.scss';
 @import 'main/main.scss';
+@import 'registro/registro.scss';
+@import 'role/add/add.scss';
 @import 'role/edit/edit.scss';
 @import 'role/list/list.scss';
 @import 'role/role.scss';

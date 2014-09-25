@@ -3,8 +3,7 @@
 angular.module('modulusIoApp')
   .controller('UserAddCtrl', function ($document, $scope, $state, User, socket, Role, messageCenterService) {
       
-      $scope.roles = Role.query({});
-      $scope.heading = 'Agregar';
+      $scope.roles = Role.query({});      
       $scope.user = new User;
       
   

@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('modulusIoApp')
-  .controller('RoleEditCtrl', function ($scope, $state, Role, messageCenterService, $timeout) {
+  .controller('RoleAddCtrl', function ($scope, $state, Role, messageCenterService, $timeout) {
 
-  	$scope.role = Role.get({id:$state.params.id},function(){});
+  	$scope.role = new Role;            
 
       $scope.save = function(form) {
         $scope.submitted = true;
@@ -13,7 +13,8 @@ angular.module('modulusIoApp')
           $scope.role.$save()
           .then( function() {
             messageCenterService.reset();
-            messageCenterService.add('success', 'Datos del rol almacenados.', { status: messageCenterService.status.shown, timeout:4000 });                        
+            messageCenterService.add('success', 'Datos del rol almacenados.', { status: messageCenterService.status.shown, timeout:4000 });            
+            $scope.role = new Role;
             $scope.submitted = false;
           })
           .catch( function(err) {

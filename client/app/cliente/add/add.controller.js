@@ -1,20 +1,21 @@
 'use strict';
 
 angular.module('modulusIoApp')
-  .controller('RoleEditCtrl', function ($scope, $state, Role, messageCenterService, $timeout) {
-
-  	$scope.role = Role.get({id:$state.params.id},function(){});
-
+  .controller('ClienteAddCtrl', function ($scope, $state, Cliente, socket, messageCenterService) {
+                  
+      $scope.cliente = new Cliente;
+      
       $scope.save = function(form) {
         $scope.submitted = true;
 
         if(form.$valid) {
         
-          $scope.role.$save()
+          $scope.cliente.$save()
           .then( function() {
             messageCenterService.reset();
-            messageCenterService.add('success', 'Datos del rol almacenados.', { status: messageCenterService.status.shown, timeout:4000 });                        
-            $scope.submitted = false;
+            messageCenterService.add('success', 'Datos del cliente almacenados.', { status: messageCenterService.status.shown, timeout:4000 });
+            $scope.submitted = false;    
+            $scope.cliente = new Cliente;       
           })
           .catch( function(err) {
             err = err.data;
@@ -27,9 +28,9 @@ angular.module('modulusIoApp')
             });
           });
          }
-         else{
-            messageCenterService.reset();
-            messageCenterService.add('alert', 'Revise los campos marcados en rojo.', { status: messageCenterService.status.shown });
+         else{            
+              messageCenterService.reset();
+              messageCenterService.add('alert', 'Revise los campos marcados en rojo.', { status: messageCenterService.status.shown });
          }    
       }; 
   });

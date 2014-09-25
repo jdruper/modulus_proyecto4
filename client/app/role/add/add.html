@@ -1,9 +1,5 @@
-
 <form class="form form-margin-top" name="form" ng-submit="save(form)" novalidate>
 <div class="row">
-	<div class="small-12 columns text-right edit-color">
-		<h4><i class="fa fa-pencil"></i> Editar</h4>		
-	</div>
 	<div class="small-12 columns">
 		<label for="txtName" class="list-foot-span form-margin-bottom">Nombre del Rol</label>
 		<input type="text" id="txtName" name="txtName" ng-model="role.name" placeholder="e.g. Contabilidad, Secretaria" ng-class="{ 'error-border': submitted && form.txtName.$invalid }" required>

@@ -18,6 +18,9 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/empresa/empresa.socket').register(socket);
+  require('../api/cita/cita.socket').register(socket);
+  require('../api/cliente/cliente.socket').register(socket);
   require('../api/role/role.socket').register(socket);
   require('../api/thing/thing.socket').register(socket);
 }
