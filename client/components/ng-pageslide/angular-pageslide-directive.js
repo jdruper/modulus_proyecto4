@@ -76,7 +76,6 @@ pageslideDirective.directive('pageslide', [
                         break;
                 }
 
-
                 /* Append */
                 document.body.appendChild(slider);
                 slider.appendChild(content);

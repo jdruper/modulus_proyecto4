@@ -1,34 +1,30 @@
 <div class="list-container">	
 	<div class="row" ng-repeat="user in users">		
-	<div id="submenu-{{$index}}" class="small-12 columns">
-			<div class="small-2 columns">
-				<a id="submenu-close"><i class="fa fa-angle-right fa-2x"></i></a>
-			</div>
-			<div class="small-5 columns">
-				<a ui-sref="user.edit({id: user._id})"><i class="fa fa-pencil text-right fa-2x"></i></a>
-			</div>
-			<div class="small-5 columns">
-				<a ng-click="delete(user)"><i class="fa fa-trash text-right fa-2x"></i></a>
-			</div>
-		</div>
-		<div class="small-12 columns">
-			<div class="small-10 columns list-item">
-				<div class="small-12 columns list-item-title list-title-span">
+		<div class="small-12 columns edit-list">
+			<div class="small-9 edit-list-info">
+				<div class="small-9 columns list-item-title list-title-span">
 					{{user.name}}
 				</div>
-				<div class="small-12 columns list-item-content">
+				<div class="small-9 columns list-item-content">
 			   		<span class="text-muted list-body-span">{{user.email}}</span>
 			   	</div>
-			   	<div class="small-12 columns list-item-content">
+			   	<div class="small-9 columns list-item-content left-align">
 			   		<span class="text-muted list-foot-span">Rol: {{user.role}}</span>
 			   	</div>
-			        <!-- <a ng-click="delete(user)" class="trash"><span class="fa fa-trash text-right"></span></a> -->
 			</div>
-			<div class="small-2 columns list-item">
-			   	<div class="small-10 columns">
-			   		<a pageslide="right" ps-class="list-submenu" ps-custom-top="300px" ps-auto-close="true" ps-speed="0.5" href="#submenu-{{$index}}"><span class="fa fa-angle-left fa-2x text-right"></span></a>
-			   	</div>
-			        <!-- <a ng-click="delete(user)" class="trash"><span class="fa fa-trash text-right"></span></a> -->
+		   	<div class="edit-list-arrow">
+		   		<a pageslide="right" href="#submenu"  repeat-index="{{$index}}" ps-class="list-submenu" ps-custom-top="300px" ps-auto-close="true" ps-speed="0.5"><span class="fa fa-angle-left fa-2x text-right"></span></a>
+		   	</div>
+			<div id="submenu" class="small-12 columns parent-slider">
+				<div class="small-2 columns close-slider">
+					<a id="submenu-close" href="#"><i class="fa fa-angle-right fa-2x"></i></a>
+				</div>
+				<div class="small-5 columns edit-slider">
+					<a ui-sref="user.edit({id: user._id})" href="#"><i class="fa fa-pencil text-right fa-2x"></i></a>
+				</div>
+				<div class="small-5 columns delete-slider">
+					<a ng-click="delete(user)" href="#"><i class="fa fa-trash text-right fa-2x"></i></a>
+				</div>
 			</div>
 		</div>	
 	</div>
