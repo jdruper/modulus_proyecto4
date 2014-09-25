@@ -12,7 +12,7 @@ angular.module('modulusIoApp')
           $scope.cliente.$save()
           .then( function() {
             messageCenterService.reset();
-            messageCenterService.add('success', 'Datos del cliente almacenados.', { status: messageCenterService.status.shown, timeout:4000 });
+            messageCenterService.add('success', 'Datos del cliente almacenados.', { status: messageCenterService.status.shown, timeout:6000 });
             $scope.submitted = false;
           })
           .catch( function(err) {

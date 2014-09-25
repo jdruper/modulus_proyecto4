@@ -8,6 +8,7 @@
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
 var Role = require('../api/role/role.model');
+var Cliente = require('../api/cliente/cliente.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
@@ -67,3 +68,18 @@ Role.find({}).remove(function() {
     }
   );
 });
+
+Cliente.find({}).remove(function() {
+  Cliente.create({
+    nombre_completo: 'Cliente Prueba',
+    telefono: '2222-2222',
+    email: 'prueba@cliente.com',
+    fecha_nacimiento: '12/12/12',
+    direccion: 'San José, Costa Rica'
+  }, function() {
+      console.log('finished populating clients');
+    }
+  );
+});
+
+

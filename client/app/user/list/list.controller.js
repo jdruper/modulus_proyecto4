@@ -11,7 +11,6 @@ angular.module('modulusIoApp')
             messageCenterService.reset();
             messageCenterService.add('success', 'Los datos se eliminaron correctamente.', { status: messageCenterService.status.shown });
     	});
-
     }
 
   });
