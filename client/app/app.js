@@ -8,7 +8,8 @@ angular.module('modulusIoApp', [
   'ui.router',
   'mm.foundation',
   'MessageCenterModule',
-  'pageslide-directive'
+  'pageslide-directive',
+   'mgo-angular-wizard'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

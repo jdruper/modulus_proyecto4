@@ -1,3 +1,87 @@
-<div class="col-md-12">
-This is the registro view.
+<div class="registro-container">
+	<div bg-swap="registro-body" class="col-md-12 registro-style auth text-center ">
+		<wizard on-finish="finishedWizard()"> 
+			<wz-step title="1">
+				<img interchange="[assets/img/logo-small.png, (small)],
+                  [assets/img/logo-medium.png, (medium)],
+                  [assets/img/logo-medium.png, (large]" src="assets/img/logo-small.png" class="ng-scope">
+			        	<h1>Registre su negocio</h1>
+			       	 <!-- <p>Aca podría ir algún texto que introduzca la sección del registro.</p> -->
+			        	<div class="row">
+					<!-- <div class="small-12 columns">
+						<label for="txtNombre" class="list-foot-span form-margin-bottom">Nombre de la empresa</label>
+					</div> -->
+					<div class="small-12 columns">
+						<input type="text" id="txtNombre" name="txtNombre" placeholder="Nombre de la empresa"  required>
+					</div>
+					<div class="small-12 columns">
+						<!-- <label for="txtDireccion" class="list-foot-span form-margin-bottom">Dirección de la empresa</label> -->
+						<input type="text" id="txtDireccion" name="txtDireccion" placeholder="Dirección de la empresa"  required>
+					</div>
+					<div class="small-12 columns">
+						<!-- <label for="txtTelefono" class="list-foot-span form-margin-bottom">Número telefónico de la empresa</label> -->
+						<input type="tel" id="txtTelefono" name="txtTelefono" placeholder="Número telefónico de la empresa"  required>
+					</div>
+				</div>
+				<div class="boton-registro-container">
+		       			 <input type="submit" class="boton-registro" wz-next value="Continuar" />
+		       		</div>
+		   	 </wz-step>
+		<wz-step title="2">
+			<img interchange="[assets/img/logo-small.png, (small)],
+                  [assets/img/logo-medium.png, (medium)],
+                  [assets/img/logo-medium.png, (large]" src="assets/img/logo-small.png" class="ng-scope">
+		        	<h1>Registre su negocio</h1>
+		        	<p class="registro-parrafo">Seleccione los módulos que desea incorporar.</p>
+		        	<div class="checkbox-container-parent">
+			        	<div class="checkbox-container">
+				        	<div class="switch small-12 row">
+					        	<div class="small-6 registro-float-l text-right">
+					        		<p>Citas</p>
+					        	</div>
+					        	<div class="small-6 registro-float-r text-left">
+						 	<input id="checkbox-citas" type="checkbox">
+						 	<label for="checkbox-citas"></label>
+						 </div>
+					</div> 
+					<div class="switch small-12 row">
+					        	<div class="small-6 registro-float-l text-right">
+					        		<p>Clientes</p>
+					        	</div>
+					        	<div class="small-6 registro-float-r text-left">
+						 	<input id="checkbox-clientes" type="checkbox">
+						 	<label for="checkbox-clientes"></label>
+						 </div>
+					</div> 
+					<div class="switch small-12 row">
+					        	<div class="small-6 registro-float-l text-right">
+					        		<p>Expedientes</p>
+					        	</div>
+					        	<div class="small-6 registro-float-r text-left">
+						 	<input id="checkbox-expedientes" type="checkbox">
+						 	<label for="checkbox-expedientes"></label>
+						 </div>
+					</div> 
+				</div>
+			</div>
+			<div class="boton-registro-container">
+	       			 <input type="submit" class="boton-registro" wz-next value="Continuar" />
+	       		</div>
+		    </wz-step>
+		    <wz-step title="3">
+		        <h1>Continuing</h1>
+		        <p>Even more steps!!</p>
+		       <div class="boton-registro-container">
+		       			 <input type="submit" class="boton-registro" wz-next value="Continuar" />
+		       		</div>
+		    </wz-step>
+		    <wz-step title="4">
+		        <h1>asdasdasdasd</h1>
+		        <p>You have asdasdasdasdasdsdsd here!</p>
+		       <div class="boton-registro-container">
+		       			 <input type="submit" class="boton-registro" wz-next value="Finalizar" />
+		       		</div>
+		    </wz-step>
+		</wizard>
+	</div>
 </div>

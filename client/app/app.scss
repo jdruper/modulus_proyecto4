@@ -135,6 +135,16 @@ h4 {
   background: #ED1C24;
 }
 
+#mainMenu-close, .boton-registro  {
+  color: white!important;
+  background: #c84f51;
+  border-radius: 5px;
+  padding: 5px 15px;
+  font-weight: 100;
+  /*box-shadow: 0 6px #ab3c3c;*/
+  border: none;
+}
+
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';
