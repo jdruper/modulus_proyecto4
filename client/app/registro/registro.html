@@ -28,14 +28,12 @@
 		       		</div>
 		   	 </wz-step>
 		<wz-step title="2">
-			<img interchange="[assets/img/logo-small.png, (small)],
-                  [assets/img/logo-medium.png, (medium)],
-                  [assets/img/logo-medium.png, (large]" src="assets/img/logo-small.png" class="ng-scope">
-		        	<h1>Registre su negocio</h1>
-		        	<p class="registro-parrafo">Seleccione los módulos que desea incorporar.</p>
+			<!-- <img interchange="[assets/img/logo-small.png, (small)], [assets/img/logo-medium.png, (medium)], [assets/img/logo-medium.png, (large]" src="assets/img/logo-small.png" class="ng-scope"> -->
+		        	<h1>Seleccione sus módulos</h1>
+		        	<!-- <p class="registro-parrafo">Seleccione los módulos que desea incorporar.</p> -->
 		        	<div class="checkbox-container-parent">
 			        	<div class="checkbox-container">
-				        	<div class="switch small-12 row">
+				        	<div class="switch small-12 row modulos-checkbox">
 					        	<div class="small-6 registro-float-l text-right">
 					        		<p>Citas</p>
 					        	</div>
@@ -44,7 +42,7 @@
 						 	<label for="checkbox-citas"></label>
 						 </div>
 					</div> 
-					<div class="switch small-12 row">
+					<div class="switch small-12 row modulos-checkbox">
 					        	<div class="small-6 registro-float-l text-right">
 					        		<p>Clientes</p>
 					        	</div>
@@ -53,7 +51,7 @@
 						 	<label for="checkbox-clientes"></label>
 						 </div>
 					</div> 
-					<div class="switch small-12 row">
+					<div class="switch small-12 row modulos-checkbox">
 					        	<div class="small-6 registro-float-l text-right">
 					        		<p>Expedientes</p>
 					        	</div>
@@ -69,18 +67,31 @@
 	       		</div>
 		    </wz-step>
 		    <wz-step title="3">
-		        <h1>Continuing</h1>
-		        <p>Even more steps!!</p>
+		        <h1>Ingrese sus datos</h1>
+		        	<form class="form" name="form">
+			        	<div class="row">
+					<div class="small-12 columns">
+						<input type="text" id="txtNombreUsuario" name="txtNombreUsuario" placeholder="Nombre Completo"  ng-class="{ 'error-border': submitted && form.txtUsername.$invalid }" required>
+					</div>
+					<div class="small-12 columns">
+						<input type="email" id="txtCorreo" name="txtCorreo" placeholder="Correo electrónico"  ng-class="{ 'error-border': submitted && form.txtUsername.$invalid }" required>
+					</div>
+					<div class="small-12 columns">
+						<input type="password" id="txtPassword" name="txtPassword" placeholder="Contraseña"  ng-class="{ 'error-border': submitted && form.txtUsername.$invalid }" required>
+					</div>
+					<div class="small-12 columns">
+						<input type="password" id="txtPasswordConfirm" name="txtPasswordConfirm" placeholder="Confirme su contraseña"  ng-class="{ 'error-border': submitted && form.txtUsername.$invalid }" required>
+					</div>
+				</div>
+			</form>
 		       <div class="boton-registro-container">
-		       			 <input type="submit" class="boton-registro" wz-next value="Continuar" />
+		       			 <input type="submit" class="boton-registro" ng-click="timeout()" wz-next value="Continuar" />
 		       		</div>
 		    </wz-step>
 		    <wz-step title="4">
-		        <h1>asdasdasdasd</h1>
-		        <p>You have asdasdasdasdasdsdsd here!</p>
-		       <div class="boton-registro-container">
-		       			 <input type="submit" class="boton-registro" wz-next value="Finalizar" />
-		       		</div>
+		        <h1>Generando su base de datos...</h1>
+		        <i class="fa fa-cog fa-spin fa-5x loading-icon animated"></i>
+		        <p class="registro-mensaje animated fadeIn" ng-show="mensaje">Su cuenta ha sido generada exitosamente.</p>
 		    </wz-step>
 		</wizard>
 	</div>
