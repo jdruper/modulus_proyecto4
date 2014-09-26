@@ -8,7 +8,7 @@
         <span class="navbar-title">MODULUS</span>
       </div>      
       <div class="small-4 columns">
-        <a class="search-icon" pageslide="right" ps-auto-close="true" ps-speed="0.5" href="#searchMenu"><i class="fa fa-search fa-lg"></i></a>
+        <a class="search-icon" pageslide="right" ps-auto-close="true" ps-speed="0.5" ps-class="searchMenu" href="#searchMenu"><i class="fa fa-search fa-lg"></i></a>
       </div>          
     </div>
   </section>
@@ -25,19 +25,18 @@
           <span>Modulus</span>
         </accordion-heading>
           <a ui-sref="cliente.list" class="menu-link"><h3>Clientes</h3></a> 
-          <a ui-sref="role.list" class="menu-link"><h3>Citas</h3></a> 
-          <a ui-sref="role.list" class="menu-link"><h3>Expedientes</h3></a>
+          <a ui-sref="cita.list" class="menu-link"><h3>Citas</h3></a> 
+          <a ui-sref="expediente" class="menu-link"><h3>Expedientes</h3></a>
       </accordion-group>
       <accordion-group>
         <accordion-heading>
           <i class="fa fa-gear fa-lg"></i>
           <span>Configuraci&oacute;n</span>
         </accordion-heading>
-          <a ui-sref="user.list" class="menu-link"><h3>Su Cuenta</h3></a> 
-          <a ui-sref="role.list" class="menu-link"><h3>General</h3></a> 
-          <a ui-sref="role.list" class="menu-link"><h3>Modulus</h3></a>
+          <a ui-sref="user.edit({id: currentUser._id})" class="menu-link"><h3>Su Cuenta</h3></a> 
+          <!-- <a ui-sref="role.list" class="menu-link"><h3>General</h3></a>            -->
       </accordion-group>
-      <accordion-group>
+      <accordion-group ng-show="isAdmin()">
           <accordion-heading>
             <i class="fa fa-user fa-lg"></i>
             <span>Seguridad</span>
@@ -46,8 +45,10 @@
           <a ui-sref="role.list" class="menu-link"><h3>Roles</h3></a>
       </accordion-group>
     </accordion>
-    <div class="row" style="position:fixed; bottom:0px; right:0px"></div>
   </div>    
+  <div class="row">
+      <button ng-click="logout()" class="button expand">Cerrar Sesi&oacute;n</button>
+    </div>
 </div>
 <div id="searchMenu">            
     <div>

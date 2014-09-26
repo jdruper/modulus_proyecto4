@@ -1,12 +1,15 @@
 <div class="list-container">	
-	<div class="row" ng-repeat="cliente in clientes | filter: filtro.cliente">		
+	<div class="row" ng-repeat="cita in citas | filter: filtro.cita">		
 		<div class="small-12 columns edit-list">
 			<div class="small-9 edit-list-info">
 				<div class="small-9 columns list-item-title list-title-span">
-					{{cliente.nombre_completo}}
+					{{cita.nombre_cliente}}
 				</div>
-				<div class="small-9 columns list-item-content left-align">
-			   		<span class="text-muted list-body-span">{{cliente.telefono}}</span>
+				<div class="small-9 columns list-item-content">
+			   		<span class="text-muted list-body-span">{{cita.hora}}</span>
+			   	</div>			   	
+			   	<div class="small-9 columns list-item-content">
+			   		<span class="text-muted list-body-span">{{cita.titulo}}</span>
 			   	</div>			   	
 			</div>
 		   	<div class="edit-list-arrow">
@@ -17,10 +20,10 @@
 					<a id="submenu-close"><i class="fa fa-angle-right fa-2x"></i></a>
 				</div>
 				<div class="small-5 columns edit-slider">
-					<a ui-sref="cliente.edit({id: cliente._id})" href="#"><i class="fa fa-pencil text-right fa-2x"></i></a>
+					<a ui-sref="cita.edit({id: cita._id})" href="#"><i class="fa fa-pencil text-right fa-2x"></i></a>
 				</div>
 				<div class="small-5 columns delete-slider">
-					<a ng-confirm-click="¿Está seguro que desea eliminar el cliente?" confirmed-click="delete(cliente)"><i class="fa fa-trash text-right fa-2x"></i></a>
+					<a ng-confirm-click="¿Está seguro que desea eliminar la cita?" confirmed-click="delete(cita)"><i class="fa fa-trash text-right fa-2x"></i></a>
 				</div>
 			</div>
 		</div>	

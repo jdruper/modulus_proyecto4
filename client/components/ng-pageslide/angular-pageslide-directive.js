@@ -49,6 +49,8 @@ pageslideDirective.directive('pageslide', [
                 slider.style.height = 0;
                 slider.style.transitionProperty = 'width, height';
 
+                //attrs.psCustomHeight = (content.offsetTop -15)+'px';
+
                 switch (param.side){
                     case 'right':
                         slider.style.height = attrs.psCustomHeight || '100%'; 
@@ -107,7 +109,7 @@ pageslideDirective.directive('pageslide', [
                     if (slider.style.width !== 0 && slider.style.width !== 0){
                         switch (param.side){
                             case 'right':
-                                slider.style.width = param.size; 
+                                slider.style.width = param.size;
                                 break;
                             case 'left':
                                 slider.style.width = param.size; 

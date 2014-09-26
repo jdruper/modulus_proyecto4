@@ -20,7 +20,7 @@
 					<a ui-sref="role.edit({id: role._id})" href="#"><i class="fa fa-pencil text-right fa-2x"></i></a>
 				</div>
 				<div class="small-5 columns delete-slider">
-					<a ng-click="delete(role)"><i class="fa fa-trash text-right fa-2x"></i></a>
+					<a ng-confirm-click="¿Está seguro que desea eliminar el rol?" confirmed-click="delete(role)"><i class="fa fa-trash text-right fa-2x"></i></a>
 				</div>
 		</div>
 	</div>

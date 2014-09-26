@@ -1,0 +1,38 @@
+<form class="form" name="form" ng-submit="save(form)" novalidate>
+<div class="row form-margin-top">
+	<div class="small-6 columns">
+		<label class="form-margin-bottom list-foot-span" for="txtFecha">Fecha</label>
+		<input type="date" id="txtFecha" name="txtFecha" ng-model="cita.fecha" required ng-class="{ 'error-border': submitted && form.txtFecha.$invalid }">
+	</div>
+	<div class="small-6 columns">
+		<label class="form-margin-bottom list-foot-span" for="txtHora">Hora</label>
+		<input type="time" id="txtHora" name="txtHora" ng-model="cita.hora" required ng-class="{ 'error-border': submitted && form.txtHora.$invalid }">
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
+		<label class="form-margin-bottom list-foot-span" for="sltClientes">Clientes</label>
+		<select name="sltClientes" id="sltClientes" name="sltClientes" ng-model="cita.cliente" required ng-class="{ 'error-border': submitted && form.sltClientes.$invalid }">
+			<option value="">-- Seleccione Uno --</option>
+			<option ng-repeat="cliente in clientes" value="{{cliente}}">{{cliente.nombre_completo}}</option>
+		</select>	
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
+		<label class="form-margin-bottom list-foot-span" for="txtTitulo">T&iacute;tulo</label>
+		<input type="text" id="txtTitulo" name="txtTitulo" ng-model="cita.titulo" placeholder="descripci&oacute;n peque&ntilde;a" ng-class="{ 'error-border': submitted && form.txtTitulo.$invalid }">
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
+		<label class="form-margin-bottom list-foot-span" for="txtaComentarios">Comentarios</label>
+		<textarea msd-elastic id="txtaComentarios" name="txtComentarios" ng-model="cita.comentarios" ng-class="{ 'error-border': submitted && form.txtaComentarios.$invalid }" />
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns text-right button-margin-top">
+		<button type="submit" class="button expand">Guardar</button>
+	</div>
+</div>
+</form>

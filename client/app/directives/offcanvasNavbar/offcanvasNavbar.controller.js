@@ -12,12 +12,8 @@ angular.module('modulusIoApp')
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
-    $scope.getCurrentUser = Auth.getCurrentUser;
+    $scope.currentUser = Auth.getCurrentUser();
 
-    $scope.tabs = [{name:'Modulus', active:true},
-                   {name:'Buscar', active:false},
-                   {name:'Configuracion', active:false},
-                   {name:'Seguridad', active:false}];
 
     $scope.logout = function() {
       Auth.logout();

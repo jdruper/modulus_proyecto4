@@ -19,7 +19,7 @@
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
     <link rel="stylesheet" href="app/app.css">
-      <!-- injector:css -->
+      <!-- injector:css -->      
       <!-- endinjector -->
     <!-- endbuild -->
     <script type="text/javascript" src="bower_components/modernizr/modernizr.js"></script>
@@ -54,6 +54,7 @@
       <!-- bower:js -->
       <script src="bower_components/jquery/dist/jquery.js"></script>
       <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/json3/lib/json3.js"></script>
       <script src="bower_components/angular-resource/angular-resource.js"></script>
       <script src="bower_components/angular-cookies/angular-cookies.js"></script>
       <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -61,6 +62,7 @@
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/angular-socket-io/socket.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/angular-elastic/elastic.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
 
@@ -74,12 +76,18 @@
           <script src="app/account/signup/signup.controller.js"></script>
           <script src="app/admin/admin.controller.js"></script>
           <script src="app/admin/admin.js"></script>
+          <script src="app/cita/add/add.controller.js"></script>
+          <script src="app/cita/cita.controller.js"></script>
+          <script src="app/cita/cita.js"></script>
+          <script src="app/cita/edit/edit.controller.js"></script>
+          <script src="app/cita/list/list.controller.js"></script>
           <script src="app/cliente/add/add.controller.js"></script>
           <script src="app/cliente/cliente.controller.js"></script>
           <script src="app/cliente/cliente.js"></script>
           <script src="app/cliente/edit/edit.controller.js"></script>
           <script src="app/cliente/list/list.controller.js"></script>
           <script src="app/directives/bgSwap/bgSwap.directive.js"></script>
+          <script src="app/directives/confirmMessage/confirmMessage.directive.js"></script>
           <script src="app/directives/offcanvasNavbar/offcanvasNavbar.controller.js"></script>
           <script src="app/directives/offcanvasNavbar/offcanvasNavbar.directive.js"></script>
           <script src="app/directives/pwCheck/pwCheck.directive.js"></script>

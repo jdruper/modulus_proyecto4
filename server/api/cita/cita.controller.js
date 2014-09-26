@@ -2,6 +2,7 @@
 
 var _ = require('lodash');
 var Cita = require('./cita.model');
+var mandrill = require('mandrill-api/mandrill');
 
 // Get list of citas
 exports.index = function(req, res) {
@@ -24,6 +25,33 @@ exports.show = function(req, res) {
 exports.create = function(req, res) {
   Cita.create(req.body, function(err, cita) {
     if(err) { return handleError(res, err); }
+    var mandrill_client = new mandrill.Mandrill('HGAbh-QmVBv57Fk32YJvxg');
+     var message = {
+        "html": "<p>LLEGA A LAS 39</p>",
+        "text": "Example text content",
+        "subject": "example subject",
+        "from_email": "jdruper@gmail.com",
+        "from_name": "Jose Beita",
+        "to": [{
+                "email": "dianavalerin@gmail.com",
+                "name": "Dianex",
+                "type": "to"
+            }],
+        "headers": {
+            "Reply-To": "jdruper@gmail.com"
+        },
+        "important": true
+    };
+    var async = false;
+    var ip_pool = "Main Pool";
+    var send_at = "2014-09-25 22:40:00";
+    // mandrill_client.messages.send({"message": message, "async": async, "ip_pool": ip_pool, 'send_at':send_at}, function(result) {
+    //     console.log(result);     
+    // }, function(e) {
+    //     // Mandrill returns the error as an object with name and message keys
+    //     console.log('A mandrill error occurred: ' + e.name + ' - ' + e.message);
+    //     // A mandrill error occurred: Unknown_Subaccount - No subaccount exists with the id 'customer-123'
+    // });
     return res.json(201, cita);
   });
 };
