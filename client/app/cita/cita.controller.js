@@ -6,7 +6,7 @@ angular.module('modulusIoApp')
     $scope.tab = 1;
 
     $rootScope.filtro = {
-    	cita: ''
+    	cita: '2014-09-26'
     };
 
     $scope.selectedTab = function(setTab) {

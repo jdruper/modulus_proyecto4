@@ -32,4 +32,9 @@ angular.module('modulusIoApp')
               messageCenterService.add('alert', 'Revise los campos marcados en rojo.', { status: messageCenterService.status.shown });
          }    
       }; 
+
+
+      $scope.clientChange = function(e){
+          $scope.cita.nombre_cliente = e.target.selectedOptions[0].innerHTML;
+      }
   });

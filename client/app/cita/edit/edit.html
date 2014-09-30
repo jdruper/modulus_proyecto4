@@ -12,9 +12,9 @@
 <div class="row">
 	<div class="small-12 columns">
 		<label class="form-margin-bottom list-foot-span" for="sltClientes">Clientes</label>
-		<select name="sltClientes" id="sltClientes" name="sltClientes" ng-model="cita.cliente_id" required ng-class="{ 'error-border': submitted && form.sltClientes.$invalid }">
+		<select name="sltClientes" id="sltClientes" name="sltClientes" ng-model="cita.cliente_id" required ng-class="{ 'error-border': submitted && form.sltClientes.$invalid }" ui-event="{ change : 'clientChange($event)' }">
 			<option value="">-- Seleccione Uno --</option>
-			<option ng-repeat="cliente in clientes" value="{{cliente}}">{{cliente.nombre_completo}}</option>
+			<option ng-repeat="cliente in clientes" value="{{cliente._id}}">{{cliente.nombre_completo}}</option>
 		</select>	
 	</div>
 </div>

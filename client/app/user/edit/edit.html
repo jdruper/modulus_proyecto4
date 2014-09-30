@@ -16,7 +16,7 @@
 		<input type="text" id="txtScreenName" name="txtScreenName" ng-model="user.name" placeholder="su nombre dentro de Modulus" required ng-class="{ 'error-border': submitted && form.txtScreenName.$invalid }">
 	</div>
 </div>
-<div class="row">
+<div class="row" ng-show="isAdmin">
 	<div class="small-12 columns">
 		<label class="form-margin-bottom list-foot-span" for="sltRoles">Rol en el Sistema</label>
 		<select name="sltRoles" id="sltRoles" name="sltRoles" ng-model="user.role" required ng-class="{ 'error-border': submitted && form.sltRoles.$invalid }">

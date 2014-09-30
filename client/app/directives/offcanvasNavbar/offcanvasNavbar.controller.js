@@ -1,13 +1,16 @@
 'use strict';
 
 angular.module('modulusIoApp')
-  .controller('OffcanvasNavbarCtrl', function ($scope, $location, Auth) {
+  .controller('OffcanvasNavbarCtrl', function ($scope, $location, Auth, $rootScope) {
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
     }];
 
-    $scope.checked;
+    $rootScope.modulos = [{modulo:'Clientes',sref:'cliente.list', active:true}, 
+                          {modulo:'Citas',sref:'cita.list', active:true}, 
+                          {modulo:'Expedientes',sref:'expediente', active:true} ]
+     $scope.checked;
     $scope.currentTab = 'Modulus';    
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;

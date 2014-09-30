@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('modulusIoApp')
-  .controller('UserEditCtrl', function ($document, $scope, $state, User, socket, Role, messageCenterService, $location) {
+  .controller('UserEditCtrl', function ($document, $scope, $state, User, socket, Role, messageCenterService, $location, $rootScope) {
       
       $scope.roles = Role.query({});      
       

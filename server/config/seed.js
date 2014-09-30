@@ -9,6 +9,7 @@ var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
 var Role = require('../api/role/role.model');
 var Cliente = require('../api/cliente/cliente.model');
+var Cita = require('../api/cita/cita.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
@@ -41,8 +42,8 @@ User.find({}).remove(function() {
   }, {
     provider: 'local',
     role: 'admin',
-    name: 'Admin',
-    email: 'admin@admin.com',
+    name: 'Jose Beita',
+    email: 'jdruper@gmail.com',
     password: 'admin'
   }, function() {
       console.log('finished populating users');
@@ -73,7 +74,7 @@ Cliente.find({}).remove(function() {
   Cliente.create({
     nombre_completo: 'Cliente Prueba',
     telefono: '2222-2222',
-    email: 'prueba@cliente.com',
+    email: 'jbeita@ucenfotec.ac.cr',
     fecha_nacimiento: '12/12/12',
     direccion: 'San José, Costa Rica'
   }, function() {
@@ -82,4 +83,4 @@ Cliente.find({}).remove(function() {
   );
 });
 
-
+Cita.remove({});

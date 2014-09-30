@@ -1,20 +1,31 @@
 <form class="form" name="form" ng-submit="save(form)" novalidate>
 <div class="row form-margin-top">
-	<div class="small-6 columns">
+	<div class="small-12 columns">
 		<label class="form-margin-bottom list-foot-span" for="txtFecha">Fecha</label>
 		<input type="date" id="txtFecha" name="txtFecha" ng-model="cita.fecha" required ng-class="{ 'error-border': submitted && form.txtFecha.$invalid }">
 	</div>
-	<div class="small-6 columns">
+</div>
+<div class="row">
+	<div class="small-8 columns">
 		<label class="form-margin-bottom list-foot-span" for="txtHora">Hora</label>
-		<input type="time" id="txtHora" name="txtHora" ng-model="cita.hora" required ng-class="{ 'error-border': submitted && form.txtHora.$invalid }">
+		<div class="small-5 columns">
+			<input type="number" name="txtHoras" id="txtHoras" min="0" max="23" ng-model="horas" required ng-class="{ 'error-border': submitted && form.txtHoras.$invalid }" class="time-input">		
+		</div>
+		<div class="small-2 columns">
+			<p>:</p>
+		</div>
+		<div class="small-5 columns">
+			<input type="number" name="txtMinutos" id="txtMinutos" min="00" max="59" ng-model="minutos" required ng-class="{ 'error-border': submitted && form.txtMinutos.$invalid }" class="time-input">		
+		</div>
+		 
 	</div>
 </div>
 <div class="row">
 	<div class="small-12 columns">
 		<label class="form-margin-bottom list-foot-span" for="sltClientes">Clientes</label>
-		<select name="sltClientes" id="sltClientes" name="sltClientes" ng-model="cita.cliente" required ng-class="{ 'error-border': submitted && form.sltClientes.$invalid }">
+		<select name="sltClientes" id="sltClientes" name="sltClientes" ng-model="cita.cliente_id" required ng-class="{ 'error-border': submitted && form.sltClientes.$invalid }" ui-event="{ change : 'clientChange($event)' }">
 			<option value="">-- Seleccione Uno --</option>
-			<option ng-repeat="cliente in clientes" value="{{cliente}}">{{cliente.nombre_completo}}</option>
+			<option ng-repeat="cliente in clientes" value="{{cliente._id}}">{{cliente.nombre_completo}}</option>
 		</select>	
 	</div>
 </div>

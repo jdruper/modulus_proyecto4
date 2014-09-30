@@ -22,11 +22,11 @@
       <accordion-group>
         <accordion-heading>
           <i class="fa fa-bars fa-lg"></i>
-          <span>Modulus</span>
+          <span>Modulos</span>
         </accordion-heading>
-          <a ui-sref="cliente.list" class="menu-link"><h3>Clientes</h3></a> 
-          <a ui-sref="cita.list" class="menu-link"><h3>Citas</h3></a> 
-          <a ui-sref="expediente" class="menu-link"><h3>Expedientes</h3></a>
+          <a ng-repeat="modulo in modulos" ui-sref="{{modulo.sref}}" class="menu-link" ng-show="modulo.active"><h3>{{modulo.modulo}}</h3></a> 
+          <!-- <a ui-sref="cita.list" class="menu-link"><h3>Citas</h3></a> 
+          <a ui-sref="expediente" class="menu-link"><h3>Expedientes</h3></a> -->
       </accordion-group>
       <accordion-group>
         <accordion-heading>
@@ -34,6 +34,7 @@
           <span>Configuraci&oacute;n</span>
         </accordion-heading>
           <a ui-sref="user.edit({id: currentUser._id})" class="menu-link"><h3>Su Cuenta</h3></a> 
+          <a ui-sref="modulo" class="menu-link" ng-show="isAdmin()"><h3>Modulos</h3></a> 
           <!-- <a ui-sref="role.list" class="menu-link"><h3>General</h3></a>            -->
       </accordion-group>
       <accordion-group ng-show="isAdmin()">

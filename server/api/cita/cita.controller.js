@@ -2,6 +2,7 @@
 
 var _ = require('lodash');
 var Cita = require('./cita.model');
+var Cliente = require('../cliente/cliente.model');
 var mandrill = require('mandrill-api/mandrill');
 
 // Get list of citas
@@ -21,20 +22,24 @@ exports.show = function(req, res) {
   });
 };
 
-// Creates a new cita in the DB.
+//Creates a new cita in the DB.
 exports.create = function(req, res) {
   Cita.create(req.body, function(err, cita) {
     if(err) { return handleError(res, err); }
-    var mandrill_client = new mandrill.Mandrill('HGAbh-QmVBv57Fk32YJvxg');
+    
+    Cliente.findById(cita.cliente_id, function (err, cliente) {    
+    if (err) return next(err);
+    if (!cliente) return res.send(404);
+        var mandrill_client = new mandrill.Mandrill('HGAbh-QmVBv57Fk32YJvxg');
      var message = {
-        "html": "<p>LLEGA A LAS 39</p>",
-        "text": "Example text content",
-        "subject": "example subject",
+        "html": "<p>Cliente: Se le recuerda de su cita hoy a las "+cita.hora+"</p>",
+        "text": "<p>Se le recuerda de su cita hoy a las "+cita.hora+"</p>",
+        "subject": "Recordatorio de Cita",
         "from_email": "jdruper@gmail.com",
         "from_name": "Jose Beita",
         "to": [{
-                "email": "dianavalerin@gmail.com",
-                "name": "Dianex",
+                "email": cliente.email,
+                "name": cliente.nombre_completo,
                 "type": "to"
             }],
         "headers": {
@@ -44,17 +49,87 @@ exports.create = function(req, res) {
     };
     var async = false;
     var ip_pool = "Main Pool";
-    var send_at = "2014-09-25 22:40:00";
-    // mandrill_client.messages.send({"message": message, "async": async, "ip_pool": ip_pool, 'send_at':send_at}, function(result) {
-    //     console.log(result);     
-    // }, function(e) {
-    //     // Mandrill returns the error as an object with name and message keys
-    //     console.log('A mandrill error occurred: ' + e.name + ' - ' + e.message);
-    //     // A mandrill error occurred: Unknown_Subaccount - No subaccount exists with the id 'customer-123'
-    // });
+    var fechaDesglosada = cita.fecha.split('-');
+    var dia = fechaDesglosada[2];
+    var mes = fechaDesglosada[1];
+    var anno = fechaDesglosada[0];
+
+    cita.fecha = anno+"-"+mes+"-"+dia;
+    var send_at = cita.fecha + " "+cita.recordatorio;
+    // send_at = "2014-09-26 14:10:00";
+    console.log(send_at);    
+    mandrill_client.messages.send({"message": message, "async": async, "ip_pool": ip_pool, "send_at": send_at}, function(result) {
+        console.log(result);     
+    }, function(e) {
+        // Mandrill returns the error as an object with name and message keys
+        console.log('A mandrill error occurred: ' + e.name + ' - ' + e.message);
+        // A mandrill error occurred: Unknown_Subaccount - No subaccount exists with the id 'customer-123'
+    });
+
+    var message = {
+        "html": "<p>Administrador: Se le recuerda de su cita hoy a las "+cita.hora+"</p>",
+        "text": "<p>Se le recuerda de su cita hoy a las "+cita.hora+"</p>",
+        "subject": "Recordatorio de Cita",
+        "from_email": "jdruper@gmail.com",
+        "from_name": "Jose Beita",
+        "to": [{
+                "email": "jdruper@gmail.com",
+                "name": 'Jose Beita',
+                "type": "to"
+            }],
+        "headers": {
+            "Reply-To": "jdruper@gmail.com"
+        },
+        "important": true
+    };
+    mandrill_client.messages.send({"message": message, "async": async, "ip_pool": ip_pool, "send_at": send_at}, function(result) {
+        console.log(result);     
+    }, function(e) {
+        // Mandrill returns the error as an object with name and message keys
+        console.log('A mandrill error occurred: ' + e.name + ' - ' + e.message);
+        // A mandrill error occurred: Unknown_Subaccount - No subaccount exists with the id 'customer-123'
+    });
+
+
     return res.json(201, cita);
+    });
   });
 };
+
+
+// exports.create = function(req, res) {
+//   Cita.create(req.body, function(err, cita) {
+//     if(err) { return handleError(res, err); }
+//     var mandrill_client = new mandrill.Mandrill('HGAbh-QmVBv57Fk32YJvxg');
+//      var message = {
+//         "html": "<p>Recordatorio de Cita</p>",
+//         "text": "Contenido Ejemplo",
+//         "subject": "Recordatorio",
+//         "from_email": "jdruper@gmail.com",
+//         "from_name": "Jose Beita",
+//         "to": [{
+//                 "email": "jbeita@ucenfotec.ac.cr",
+//                 "name": "Beita",
+//                 "type": "to"
+//             }],
+//         "headers": {
+//             "Reply-To": "jdruper@gmail.com"
+//         },
+//         "important": true
+//     };
+//     var async = false;
+//     var ip_pool = "Main Pool";
+//     var send_at = "2014-09-26 20:21:00";
+//     mandrill_client.messages.send({"message": message, "async": async, "ip_pool": ip_pool, 'send_at':send_at}, function(result) {
+//         console.log(result);     
+//     }, function(e) {
+//         // Mandrill returns the error as an object with name and message keys
+//         console.log('A mandrill error occurred: ' + e.name + ' - ' + e.message);
+//         // A mandrill error occurred: Unknown_Subaccount - No subaccount exists with the id 'customer-123'
+//     });
+//     return res.json(201, cita);
+//   });
+// };
 
 // Updates an existing cita in the DB.
 exports.update = function(req, res) {

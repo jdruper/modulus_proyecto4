@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="small-12 columns data-panel">
+    <div class="small-12 columns text-center menu-heading">
+      <h3 class="internal-header">MODULOS</h3>
+    </div>
+  </div>
+ </div>
+		        	<!-- <p class="registro-parrafo">Seleccione los módulos que desea incorporar.</p> -->
+		        	<div class="checkbox-container-parent">
+			        	<div class="checkbox-container">
+			        	<div class="switch small-12 row modulos-checkbox">
+						        	<div class="small-6 registro-float-l text-right">
+						        		<p>Clientes</p>
+						        	</div>
+						        	<div class="small-6 registro-float-r text-left">
+							 	<input id="checkbox-clientes" type="checkbox" ng-model="modulos[0].active">
+							 	<label for="checkbox-clientes"></label>
+							 </div>
+						</div> 
+				        	<div class="switch small-12 row modulos-checkbox">
+					        	<div class="small-6 registro-float-l text-right">
+					        		<p>Citas</p>
+					        	</div>
+					        	<div class="small-6 registro-float-r text-left">
+						 	<input id="checkbox-citas" type="checkbox" ng-model="modulos[1].active">
+						 	<label for="checkbox-citas"></label>
+						 </div>
+						</div> 
+						<div class="switch small-12 row modulos-checkbox">
+						        	<div class="small-6 registro-float-l text-right">
+					        		<p>Expedientes</p>
+					        	</div>
+					        	<div class="small-6 registro-float-r text-left">
+						 	<input id="checkbox-expedientes" type="checkbox" ng-model="modulos[2].active">
+						 	<label for="checkbox-expedientes"></label>
+						 </div>
+					</div> 
+				</div>
+			</div>
